@@ -158,10 +158,11 @@ public class Card : MonoBehaviour,
         selected = !selected;
         SelectEvent.Invoke(this, selected);
 
-        // if (selected)
-        //     transform.localPosition += (cardVisual.transform.up * selectionOffset);
-        // else
-        //     transform.localPosition = Vector3.zero;
+        if (selected)
+            // transform.localPosition += (cardVisual.transform.up * selectionOffset);
+            transform.localPosition += Vector3.up * selectionOffset;
+        else
+            transform.localPosition = Vector3.zero;
     }
 
     public void Deselect()
@@ -169,10 +170,11 @@ public class Card : MonoBehaviour,
         if (selected)
         {
             selected = false;
-            // if (selected)
-            //     transform.localPosition += (cardVisual.transform.up * 50);
-            // else
-            //     transform.localPosition = Vector3.zero;
+            if (selected)
+                // transform.localPosition += (cardVisual.transform.up * 50);
+                transform.localPosition += Vector3.up * 50;
+            else
+                transform.localPosition = Vector3.zero;
         }
     }
 
